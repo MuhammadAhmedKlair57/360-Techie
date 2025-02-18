@@ -1,6 +1,3 @@
-markdown
-Copy
-Edit
 # 🚀 360Techie: Empowering Businesses with AI Solutions 🤖✨  
 
 Welcome to **360Techie**, where we specialize in delivering **cutting-edge AI solutions** to elevate your business operations and efficiency! 🔥  
