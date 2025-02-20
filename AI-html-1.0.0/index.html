@@ -231,7 +231,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h5 class="modal-title fw-bold" id="modalTitle"></h5>
+                <h5 class="modal-title fw-bold" id="modal_Title"></h5>
                 <button type="button" class="btn btn-square btn-close bg-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body text-center">
@@ -239,11 +239,11 @@
                     <i id="modalIcon" class="fa fa-3x"></i>
                 </div>
                 <p id="modalDescription"></p>
-                <h5 class="fw-bold">🔹 Key Features:</h5>
+                <h5 class="fw-bold" style="color: white !important; font-weight: bold; font-size: 25px;">🔹 Key Features:</h5>
                 <ul id="modalFeatures" class="list-unstyled"></ul>
-                <h5 class="fw-bold">🎯 Industries It Benefits:</h5>
+                <h5 class="fw-bold" style="color: white !important; font-weight: bold; font-size: 25px;">🎯 Industries It Benefits:</h5>
                 <ul id="modalIndustries" class="list-unstyled"></ul>
-                <h5 class="fw-bold">🚀 Why It’s Valuable?</h5>
+                <h5 class="fw-bold" style="color: white !important; font-weight: bold; font-size: 25px;">🚀 Why It’s Valuable?</h5>
                 <ul id="modalValue" class="list-unstyled"></ul>
             </div>
         </div>
@@ -305,8 +305,15 @@
         opacity: 0.95;
     }
 
-    .modal-title, .modal-body, #modalDescription, #modalFeatures li, #modalIndustries li, #modalValue li {
+    #modal_Title{
+        font-size: 30px;
+        text-align: center;
         color: white !important;
+    }
+    
+    .modal-body, #modalDescription, #modalFeatures li, #modalIndustries li, #modalValue li {
+        color: white !important;
+        text-align: justify;
     }
     
 </style>
@@ -363,7 +370,7 @@
 
     function openModal(service) {
         const data = serviceData[service];
-        document.getElementById("modalTitle").innerText = data.title;
+        document.getElementById("modal_Title").innerText = data.title;
         document.getElementById("modalIcon").className = "fa " + data.icon + " fa-3x";
         document.getElementById("modalDescription").innerText = data.description;
         document.getElementById("modalFeatures").innerHTML = data.features.map(f => `<li>✅ ${f}</li>`).join('');
@@ -437,6 +444,25 @@
     <!-- Feature End -->
 
 <!-- AI Case Study Section -->
+ <style>
+     /* Modal Styling */
+     .modal-content {
+        background: rgb(19,99,198);
+        color: white;
+        opacity: 0.95;
+    }
+
+    #modalTitle{
+        font-size: 35px;
+        color: white !important;
+    }
+    
+    #modalDescription, #modalCaseStudy, #modalExample {
+        color: white !important;
+        text-align: justify;
+        font-size: 16px;
+    }
+ </style>
 <div class="container-fluid bg-light py-5" id="Projects">
     <div class="container py-5">
         <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -449,9 +475,9 @@
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid" src="img/project-1.jpg" alt="Robotic Automation">
                     <a class="case-overlay text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#detailModal"
-                        onclick="displayProjectDetails('Robotic Automation')">
-                        <small>Robotic Automation</small>
-                        <h5 class="lh-base text-white mb-3">Enhancing Efficiency Through Automation</h5>
+                        onclick="displayProjectDetails('Assistant & Chatbots')">
+                        <small>Assistant & Chatbots</small>
+                        <h5 class="lh-base text-white mb-3">Enhancing Efficiency Through Automated Chatbots</h5>
                         <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
                     </a>
                 </div>
@@ -497,9 +523,9 @@
             <div class="modal-body d-flex align-items-center justify-content-center text-center">
                 <div style="max-width: 700px;">
                     <p id="modalDescription"></p>
-                    <strong>Case Study:</strong>
+                    <strong style="font-size: 25px; font-weight: bolder;">Case Study:</strong>
                     <p id="modalCaseStudy"></p>
-                    <strong>Example:</strong>
+                    <strong style="font-size: 25px; font-weight: bolder;">Example:</strong>
                     <p id="modalExample"></p>
                 </div>
             </div>
@@ -511,20 +537,20 @@
 <script>
     // AI Case Study Data
     const service_Data = {
-        "Robotic Automation": {
+        "Assistant & Chatbots": {
             description: "AI-powered chatbot automation helps businesses improve workflow efficiency and enhance customer engagement.",
-            caseStudy: "AI Chatbot & Virtual Assistant Development for E-Commerce: A leading e-commerce company faced challenges with high customer query volumes, leading to delayed responses, increased support costs, and reduced customer satisfaction. The company struggled with slow customer response times, resulting in lost sales, an overburdened support team, and the inability to provide 24/7 customer service. To address these issues, 360 Techie developed a custom AI-powered chatbot integrated with Natural Language Processing (NLP) to deliver instant responses, automate order tracking, assist with product recommendations, and handle return/exchange requests. This advanced chatbot was seamlessly deployed across multiple platforms, including the company’s website, WhatsApp, and Facebook Messenger, ensuring accessibility and convenience for customers. The implementation of this AI solution resulted in an 80% improvement in response time, reducing wait times to just seconds, and a 60% reduction in customer support costs by automating repetitive queries. Furthermore, the enhanced user experience led to a 30% increase in repeat purchases, solidifying customer loyalty and engagement. By leveraging AI technology, the company successfully transformed its customer support operations, achieving 24/7 availability, improved efficiency, and significantly higher customer satisfaction rates.",
-            example: "Implemented an AI-driven assistant in a financial certification platform, increasing successful registrations by 40%."
+            caseStudy: "A leading e-commerce company faced high customer query volumes, slow response times, and rising support costs. To solve this, 360 Techie developed an AI-powered chatbot with NLP to provide instant responses, automate order tracking, and assist with product recommendations. Deployed across the website, WhatsApp, and Facebook Messenger, the chatbot improved response times by 80%, cut support costs by 60%, and boosted repeat purchases by 30%. This AI solution transformed customer support, ensuring 24/7 availability, efficiency, and enhanced customer satisfaction. Additionally, it reduced human intervention in repetitive queries, allowing the support team to focus on complex issues. The chatbot's seamless integration improved operational workflow and scalability. As a result, the company gained a competitive edge in delivering exceptional customer service.",
+            example: "A financial services firm needed an AI-driven virtual assistant to automate client interactions and provide real-time financial insights, as their existing system was inefficient, causing delays and low engagement. 360 Techie developed an AI assistant that analyzed market trends, automated inquiries on stock prices and portfolio updates, and provided personalized investment advice. This resulted in a 40% increase in lead conversions, higher customer engagement and retention, and an 85% reduction in routine financial queries, easing the workload for advisors. The AI assistant transformed the firm's customer service, boosting efficiency and business growth."
         },
         "Machine Learning": {
             description: "ML-powered insights optimize trading strategies and automate financial decision-making processes.",
-            caseStudy: "An advanced AI trading platform leveraged ML algorithms to predict stock market trends, leading to a 35% improvement in investment returns.",
-            example: "A brokerage call center utilized AI models for automated trade recommendations, increasing client investments by 25% in a single quarter."
+            caseStudy: "A leading retail company faced challenges in inventory management and demand forecasting, resulting in frequent stockouts and overstock situations. To address these issues, the company required an AI-driven solution to analyze customer behavior, predict demand trends, and optimize stock levels. 360 Techie developed a machine learning-powered predictive analytics system that analyzed historical sales data, seasonal trends, and customer behavior to generate accurate demand forecasts. Utilizing deep learning algorithms, the model continuously refined predictions, enabling dynamic optimization of stock levels and pricing strategies. This solution led to a 30% reduction in inventory costs by eliminating overstock issues, a 20% increase in revenue due to optimized stock availability, and real-time insights that empowered data-driven decision-making, enhancing overall business efficiency. By leveraging 360 Techie’s advanced machine learning solutions, the retailer successfully streamlined inventory management, improved sales, and enhanced customer satisfaction.",
+            example: "A financial services provider faced rising fraud risks as traditional detection systems failed to identify complex threats, leading to financial losses and regulatory concerns. High false-positive rates and slow manual investigations further impacted security and customer trust. To address this, 360 Techie implemented an AI-driven fraud detection system using real-time anomaly detection and behavioral analysis, continuously learning from fraud patterns. This solution reduced fraudulent transactions by 50%, improved detection accuracy by 40%, and cut investigation time by 70%, enhancing security, efficiency, and fraud prevention capabilities."
         },
         "Predictive Analytics": {
             description: "AI-driven predictive analytics revolutionizes trading, e-commerce, and operational efficiency.",
-            caseStudy: "A dentist’s web platform integrated predictive scheduling, reducing appointment no-shows by 50% and optimizing doctor availability.",
-            example: "Analyzing historical patient data, the system suggested optimal appointment times, improving patient satisfaction and operational efficiency."
+            caseStudy: "A leading e-commerce retailer struggled with inaccurate demand forecasting, resulting in frequent stock shortages, excess inventory, lost revenue, and increased operational costs. The company needed a data-driven solution to optimize inventory planning, pricing strategies, and supply chain efficiency. 360 Techie implemented an AI-powered predictive analytics system leveraging machine learning models to analyze historical sales data, seasonal trends, and customer behavior. This system provided real-time demand forecasting, optimizing stock levels, improving pricing decisions, and enhancing sales performance. As a result, the retailer achieved a 30% reduction in inventory holding costs, a 25% increase in revenue due to optimized stock availability and pricing, and improved decision-making with AI-driven insights. By leveraging 360 Techie’s predictive analytics solutions, the retailer significantly enhanced inventory management, increased profitability, and ensured better customer satisfaction through improved product availability.",
+            example: "A manufacturing company faced frequent unexpected machine breakdowns, leading to costly downtime and production delays. Traditional maintenance methods were ineffective in preventing sudden failures, increasing operational expenses. To address this, 360 Techie implemented an AI-powered predictive maintenance system that continuously monitored sensor data, machine logs, and historical records to detect early signs of potential failures. By enabling proactive maintenance scheduling, this solution reduced unplanned downtime by 40%, lowered maintenance costs by 30%, and extended equipment lifespan. As a result, the company improved operational efficiency, minimized disruptions, and optimized overall production performance."
         }
     };
 
@@ -689,9 +715,9 @@
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Our Team</div>
                     <h1 class="mb-4">Meet Our Experienced Team Members</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor eirmod magna dolore erat amet</p>
+                    <p class="mb-4"> At <strong>360 Techie</strong>, we specialize in <strong>AI-driven solutions</strong> that transform businesses through 
+                        <strong>automation, intelligent analytics, and machine learning</strong>. Our expert team develops <strong>scalable, data-driven AI solutions</strong> to enhance efficiency, streamline operations, 
+                        and optimize decision-making. <br> <br><strong style="font-size: 20px; font-weight: 800; color: #14183e;">Stay ahead in the digital era with 360 Techie—your trusted AI partner!</strong></p>
                 </div>
                 <div class="col-lg-7">
                     <div class="row g-4">
@@ -844,7 +870,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <p class="text-center mb-4">Have <strong>AI-related questions?</strong> Contact <strong>360 Techie</strong> using the form below, and our experts will get back to you promptly with the best <strong>AI solutions</strong> for your business needs.</p>
                     <div class="wow fadeIn" data-wow-delay="0.3s">
                         <form>
                             <div class="row g-3">
@@ -916,9 +942,7 @@
                     <a href="index.html" class="d-inline-block mb-3">
                         <h1 class="text-white">360<span class="text-primary"></span>Techie</h1>
                     </a>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor</p>
+                    <p class="mb-0"><strong>360 Techie</strong> transforms businesses with <strong>AI-driven solutions</strong>, automating processes, enhancing decision-making, and driving growth. Stay ahead with <strong>360 Techie—your trusted AI partner</strong>!</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>
